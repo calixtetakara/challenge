@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<title>Challenge Anglais 30 Jours</title>
+<style>
+  @page { size: A4; margin: 0; }
+
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+
+  body {
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    background: #0f1b33;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+  }
+
+  .affiche {
+    width: 794px;
+    min-height: 1123px;
+    background: linear-gradient(160deg, #1B2A4A 0%, #0f1b33 100%);
+    color: #ffffff;
+    padding: 40px 35px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.5);
+  }
+
+  /* ---------- EN-TÊTE ---------- */
+  .header {
+    text-align: center;
+    border-bottom: 3px solid #FF7A29;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+  }
+  .header h1 {
+    font-size: 38px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+  }
+  .header h1 span { color: #FF7A29; }
+  .header .sub {
+    margin-top: 8px;
+    font-size: 15px;
+    color: #F2C14E;
+    font-weight: 600;
+  }
+  .header .names {
+    margin-top: 6px;
+    font-size: 14px;
+    color: #cfd8e8;
+  }
+
+  /* ---------- ROUTINE ---------- */
+  .routine {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 10px;
+    margin-bottom: 20px;
+  }
+  .card {
+    background: rgba(255,255,255,0.06);
+    border-left: 4px solid #FF7A29;
+    border-radius: 8px;
+    padding: 10px 12px;
+    font-size: 11.5px;
+    line-height: 1.4;
+  }
+  .card .title {
+    font-weight: 800;
+    font-size: 12.5px;
+    color: #F2C14E;
+    margin-bottom: 4px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .card.dim { border-left-color: #6c7a99; }
+
+  /* ---------- TABLEAU ---------- */
+  .table-title {
+    text-align: center;
+    font-size: 16px;
+    font-weight: 800;
+    color: #FF7A29;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 10px;
+  }
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 10px;
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  thead th {
+    background: #FF7A29;
+    color: #ffffff;
+    padding: 8px 6px;
+    text-align: left;
+    font-weight: 800;
+    font-size: 10px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  tbody td {
+    padding: 5px 6px;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+    color: #e6ecf5;
+    vertical-align: top;
+    line-height: 1.25;
+  }
+  tbody tr:nth-child(even) { background: rgba(255,255,255,0.04); }
+
+  tbody tr.week-sep td {
+    background: #F2C14E;
+    color: #0f1b33;
+    font-weight: 800;
+    text-align: center;
+    letter-spacing: 1px;
+    font-size: 11px;
+    padding: 6px;
+  }
+
+  tbody tr.meet td { color: #F2C14E; font-weight: 700; }
+  tbody tr.libre td { color: #9aa8c2; font-style: italic; }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 7px;
+    border-radius: 20px;
+    font-weight: 800;
+    font-size: 9.5px;
+  }
+  .badge.calixte { background: #2E7DDE; color: #fff; }
+  .badge.gilles  { background: #22A06B; color: #fff; }
+  .badge.ensemble { background: #F2C14E; color: #0f1b33; }
+  .badge.libre   { background: #6c7a99; color: #fff; }
+
+  .type-video { color: #FF7A29; font-weight: 700; }
+  .type-gram  { color: #6ec1ff; font-weight: 700; }
+
+  /* ---------- CITATION ---------- */
+  .quote {
+    margin-top: 22px;
+    background: rgba(242,193,78,0.12);
+    border: 2px solid #F2C14E;
+    border-radius: 12px;
+    padding: 16px;
+    text-align: center;
+    font-size: 14px;
+    font-style: italic;
+    color: #F2C14E;
+    font-weight: 600;
+    line-height: 1.5;
+  }
+  .footer {
+    margin-top: 14px;
+    text-align: center;
+    font-size: 11px;
+    color: #9aa8c2;
+    letter-spacing: 0.5px;
+  }
+
+  @media print {
+    body { background: #fff; padding: 0; }
+    .affiche { box-shadow: none; border-radius: 0; }
+  }
+</style>
+</head>
+<body>
+
+<div class="affiche">
+
+  <!-- EN-TÊTE -->
+  <div class="header">
+    <h1>Challenge <span>Anglais</span> 30 Jours</h1>
+    <div class="sub">Deux amis. Un mois. De vrais progrès.</div>
+    <div class="names">Calixte &amp; Gilles</div>
+  </div>
+
+  <!-- ROUTINE -->
+  <div class="routine">
+    <div class="card">
+      <div class="title">🌅 Matin</div>
+      Chacun enregistre un vocal en anglais de 1 min à 1 min 30. L’autre écoute, transcrit en anglais, traduit en français et corrige.
+    </div>
+    <div class="card">
+      <div class="title">🌙 Soir</div>
+      Même chose : un vocal chacun. L’autre transcrit, traduit et corrige.
+    </div>
+    <div class="card">
+      <div class="title">🎬 Lundi → Vendredi</div>
+      Vidéo 30 s + shadowing + anecdote personnelle, OU échange grammaire / vocabulaire.
+    </div>
+    <div class="card dim">
+      <div class="title">☕ Samedi · 🎙️ Dimanche</div>
+      Samedi : libre. Dimanche : meet de 30 min sur le thème de la semaine.
+    </div>
+  </div>
+
+  <!-- TABLEAU -->
+  <div class="table-title">Qui envoie la vidéo ou la grammaire ?</div>
+
+  <table>
+    <thead>
+      <tr>
+        <th style="width:5%">Jour</th>
+        <th style="width:8%">Quand</th>
+        <th style="width:23%">Vocal matin</th>
+        <th style="width:23%">Vocal soir</th>
+        <th style="width:22%">Activité du jour</th>
+        <th style="width:19%">Responsable</th>
+      </tr>
+    </thead>
+    <tbody>
+
+      <tr class="week-sep"><td colspan="6">SEMAINE 1 — SANTÉ</td></tr>
+      <tr>
+        <td>1</td><td>Lun</td>
+        <td>Ma routine santé idéale</td>
+        <td>Ce que je fais pour mon énergie</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>2</td><td>Mar</td>
+        <td>Une habitude saine que j’ai</td>
+        <td>Une mauvaise habitude à arrêter</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>3</td><td>Mer</td>
+        <td>Mon repas sain préféré</td>
+        <td>Comment je gère le stress</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>4</td><td>Jeu</td>
+        <td>Le sport que j’aime / déteste</td>
+        <td>Pourquoi le sommeil est important</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>5</td><td>Ven</td>
+        <td>Un petit changement pour ma santé</td>
+        <td>Bilan santé de la semaine</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr class="libre">
+        <td>6</td><td>Sam</td>
+        <td>Libre</td><td>Libre</td>
+        <td>Libre</td>
+        <td><span class="badge libre">—</span></td>
+      </tr>
+      <tr class="meet">
+        <td>7</td><td>Dim</td>
+        <td colspan="2">🎙️ Meet 30 min : Santé</td>
+        <td>Meet 30 min</td>
+        <td><span class="badge ensemble">Ensemble</span></td>
+      </tr>
+
+      <tr class="week-sep"><td colspan="6">SEMAINE 2 — ÉDUCATION</td></tr>
+      <tr>
+        <td>8</td><td>Lun</td>
+        <td>La meilleure chose apprise cette année</td>
+        <td>Comment j’apprends mieux</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>9</td><td>Mar</td>
+        <td>Une matière aimée / détestée</td>
+        <td>Un professeur qui m’a marqué</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>10</td><td>Mer</td>
+        <td>Une compétence à apprendre en 3 mois</td>
+        <td>Le rôle de l’erreur</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>11</td><td>Jeu</td>
+        <td>Étudier seul vs en groupe</td>
+        <td>Un livre / cours qui m’a changé</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>12</td><td>Ven</td>
+        <td>Mon objectif d’apprentissage</td>
+        <td>Bilan éducation</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr class="libre">
+        <td>13</td><td>Sam</td>
+        <td>Libre</td><td>Libre</td>
+        <td>Libre</td>
+        <td><span class="badge libre">—</span></td>
+      </tr>
+      <tr class="meet">
+        <td>14</td><td>Dim</td>
+        <td colspan="2">🎙️ Meet 30 min : Éducation</td>
+        <td>Meet 30 min</td>
+        <td><span class="badge ensemble">Ensemble</span></td>
+      </tr>
+
+      <tr class="week-sep"><td colspan="6">SEMAINE 3 — TECHNOLOGIE</td></tr>
+      <tr>
+        <td>15</td><td>Lun</td>
+        <td>La techno que j’utilise tous les jours</td>
+        <td>Une appli qui facilite ma vie</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>16</td><td>Mar</td>
+        <td>Réseaux sociaux : avantages / inconvénients</td>
+        <td>L’IA dans notre vie</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>17</td><td>Mer</td>
+        <td>Une invention tech que j’attends</td>
+        <td>Comment je déconnecte du téléphone</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>18</td><td>Jeu</td>
+        <td>La tech à l’école / au travail</td>
+        <td>Un gadget que je regrette</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>19</td><td>Ven</td>
+        <td>La tech qui me fait peur</td>
+        <td>Bilan technologie</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr class="libre">
+        <td>20</td><td>Sam</td>
+        <td>Libre</td><td>Libre</td>
+        <td>Libre</td>
+        <td><span class="badge libre">—</span></td>
+      </tr>
+      <tr class="meet">
+        <td>21</td><td>Dim</td>
+        <td colspan="2">🎙️ Meet 30 min : Technologie</td>
+        <td>Meet 30 min</td>
+        <td><span class="badge ensemble">Ensemble</span></td>
+      </tr>
+
+      <tr class="week-sep"><td colspan="6">SEMAINE 4 — SOCIÉTÉ</td></tr>
+      <tr>
+        <td>22</td><td>Lun</td>
+        <td>Un problème social qui me touche</td>
+        <td>Comment je vois ma communauté</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>23</td><td>Mar</td>
+        <td>Respect et différences</td>
+        <td>Une chose à changer dans le monde</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>24</td><td>Mer</td>
+        <td>Importance de la famille / amis</td>
+        <td>Comment être un bon citoyen</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>25</td><td>Jeu</td>
+        <td>Une injustice que j’ai vue</td>
+        <td>Le rôle de la jeunesse</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+      <tr>
+        <td>26</td><td>Ven</td>
+        <td>Ma vision d’une société idéale</td>
+        <td>Bilan société</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr class="libre">
+        <td>27</td><td>Sam</td>
+        <td>Libre</td><td>Libre</td>
+        <td>Libre</td>
+        <td><span class="badge libre">—</span></td>
+      </tr>
+      <tr class="meet">
+        <td>28</td><td>Dim</td>
+        <td colspan="2">🎙️ Meet 30 min : Société</td>
+        <td>Meet 30 min</td>
+        <td><span class="badge ensemble">Ensemble</span></td>
+      </tr>
+
+      <tr class="week-sep"><td colspan="6">BILAN FINAL</td></tr>
+      <tr>
+        <td>29</td><td>Lun</td>
+        <td>Mon top 3 des progrès en anglais</td>
+        <td>Ce qui a été le plus difficile</td>
+        <td class="type-video">🎬 Vidéo + shadowing</td>
+        <td><span class="badge calixte">Calixte</span></td>
+      </tr>
+      <tr>
+        <td>30</td><td>Mar</td>
+        <td>Défi final : parler 2 min sans pause</td>
+        <td>Bilan du challenge</td>
+        <td class="type-gram">📘 Grammaire / vocab</td>
+        <td><span class="badge gilles">Gilles</span></td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- CITATION -->
+  <div class="quote">
+    « Parle chaque jour, même imparfaitement. La fluidité se construit en étant présent, pas en attendant d’être prêt. »
+  </div>
+
+  <div class="footer">Jour 1 commence aujourd’hui. Progrès &gt; Perfection.</div>
+
+</div>
+
+</body>
+</html>
